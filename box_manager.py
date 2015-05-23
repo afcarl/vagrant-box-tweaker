@@ -60,17 +60,24 @@ def process_args():
     is selected
     """
 
-    description = ("Create a Vagrant box  "
-                   "and create/update a JSON file describing the box version, "
-                   "suitable for use with 'vagrant add'.")
+    main_description = ("Create and manage customised versions of standard "
+                        "Vagrant boxes.")
     parser = argparse.ArgumentParser(
-        description=description,
+        description=main_description,
     )
 
     subparsers = parser.add_subparsers()
+    create_description = ("Create a Vagrant box from an existing standard box "
+                          "with the specified provisioning script applied. "
+                          "Also create/update a JSON file describing the box "
+                          "version, suitable for use with 'vagrant add'.")
+    
     parser_create = subparsers.add_parser('create',
+            description=create_description,
             help='Create/update a box')
+    prune_description = "Prune all but the latest n versions of a box."
     parser_prune = subparsers.add_parser('prune',
+            description=prune_description,
             help='Prune old versions of a box')
 
     parser_create.add_argument('source_box',
@@ -82,8 +89,7 @@ def process_args():
     parser_create.add_argument('target_box',
         help='Name of box that will be created (e.g. foocorp/precise64)')
     parser_create.add_argument('box_id',
-        help=('Unique identifier for the created box '
-              '(e.g. CFEngine Git commit hash)'))
+        help='Unique identifier for the created box')
     parser_create.set_defaults(func=create_box)
 
     parser_prune.add_argument('box',
