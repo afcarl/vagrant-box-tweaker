@@ -16,7 +16,12 @@ updated for subsequent builds of the same target box name) which enumerates the 
 
 Old versions of a box can be removed using the `prune` verb.
 
-Usage:
+### Usage
+
+Set `INSTALL_DIR` and `VAGRANT_BOXES_PUBLIC_URL` inside `box_manager.py` to reflect your installation.
+
+Then, run as follows:
+
 ```
 $ ./box_manager.py -h
 usage: box_manager.py [-h] {create,prune} ...
