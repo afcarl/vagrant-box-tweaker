@@ -5,7 +5,7 @@ files. Provides a simple method of creating boxes pre-provisioned with your
 standard Puppet or Chef configuration. (See also:
 [Veewee](https://github.com/jedi4ever/veewee))
 
-Scripts used for provisioning should be placed in the `build_templates`.  The
+Scripts used for provisioning should be placed in `build_templates`.  The
 `Vagrantfile` in that folderis a template used for spawning the Vagrant machines
 used to generate the boxes.
 
