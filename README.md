@@ -6,7 +6,7 @@ standard Puppet or Chef configuration. (See also:
 [Veewee](https://github.com/jedi4ever/veewee))
 
 Scripts used for provisioning should be placed in `build_templates`.  The
-`Vagrantfile` in that folderis a template used for spawning the Vagrant machines
+`Vagrantfile` in that folder is a template used for spawning the Vagrant machines
 used to generate the boxes.
 
 Each box version for a given target box name will be placed in a
